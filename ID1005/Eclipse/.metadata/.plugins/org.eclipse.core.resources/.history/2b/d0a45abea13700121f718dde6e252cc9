@@ -1,0 +1,12 @@
+import javax.swing.JFrame;
+
+public class EnArmadBandit extends JFrame {
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		new SlotFrame("hej"); 
+	}
+
+}

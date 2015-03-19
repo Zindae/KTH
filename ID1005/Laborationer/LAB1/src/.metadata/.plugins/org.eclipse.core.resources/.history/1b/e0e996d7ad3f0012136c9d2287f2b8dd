@@ -1,0 +1,27 @@
+import java.util.*;
+
+import javax.swing.JOptionPane;
+
+public class LAB4_LogIn
+{
+	public static void main(String[] args)
+	{
+			
+		Scanner read = new Scanner(System.in);
+		
+     	System.out.println("----------------------------LOGGA IN-------------------------------------------\n");
+
+     	JOptionPane.showInputDialog("Skriv användarnamnet: ");
+
+		String user = read.nextLine(); //sparar inmatningen i strängen user
+
+		JOptionPane.showInputDialog("Skriv lösenordet: ");
+
+		String pass = read.nextLine(); //sparar inmatningen i strängen pass
+		
+		LAB4_LogIn_KLASS2 answer = new LAB4_LogIn_KLASS2(user, pass);
+		
+		System.out.println("\n-------------------------------------------------------------------------------");
+	}
+}
+

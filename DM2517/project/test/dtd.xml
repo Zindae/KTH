@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE root SYSTEM "http://statecs.com/DM2517/test/recipes.dtd"  [
+    <!ENTITY brkbar   "&#166;" >
+    <!ENTITY ccedil   "&#231;" >
+    <!ENTITY Ouml     "&#214;" >
+    <!ENTITY ouml     "&#246;">
+]>
+
+<root>
+<menu>
+<menu_item>
+<menu_id>1</menu_id>
+<name>Home</name>
+<url>index.php</url>
+</menu_item>
+<menu_item>
+<menu_id>2</menu_id>
+<name>Edit Recipes</name>
+<url>recipes.php</url>
+</menu_item>
+<menu_item>
+<menu_id>4</menu_id>
+<name>Login/Logout</name>
+<url>logout.php</url>
+</menu_item>
+</menu>
+<recipes_cookbook>
+<recipes>
+<recipe_id>1</recipe_id>
+<img>http://statecs.com/DM2517/assets/cheesecake.png</img>
+<title>Cheesecake Brownie Squares Recipe</title>
+<alt>cheesecake</alt>
+<ingredients>
+1 package Fudge Brownie Mix, 1 cup Cream Cheese, 3 Butter, 1/2 cup Sugar, 1 cup Flour
+</ingredients>
+<directions>
+Prepare brownie mix batter according to package directions. Spread 2 cups into a greased 13-in. x 9-in. baking dish; set aside.In a small bowl, beat the cream cheese, butter, sugar, flour and vanilla until smooth. Add eggs; beat on low speed just until combined. Spread evenly over brownie batter. Top with remaining brownie batter. Cut through batter with a knife to swirl.Bake at 350for 28-32 minutes or until a toothpick inserted near the center comes out with moist crumbs (brownies may appear moist). Cool completely on a wire rack. Spread frosting over brownies. Yield: 3 dozen.
+</directions>
+<similar>1</similar>
+<date>0000-00-00</date>
+<reviews>
+<comment>
+<comment_id>1</comment_id>
+<comment_date>2015-01-05</comment_date>
+<comments>Ja!!</comments>
+<name>Chris</name>
+<email>state@kth.se</email>
+</comment>
+<comment>
+<comment_id>2</comment_id>
+<comment_date>2015-01-10</comment_date>
+<comments>Wonderful!</comments>
+<name/>
+<email/>
+</comment>
+<comment>
+<comment_id>11</comment_id>
+<comment_date>2015-01-18</comment_date>
+<comments>test</comments>
+<name>test</name>
+<email>test@test.com</email>
+</comment>
+<comment>
+<comment_id>20</comment_id>
+<comment_date>2015-01-18</comment_date>
+<comments>Mums</comments>
+<name>Guest</name>
+<email/>
+</comment>
+</reviews>
+</recipes>
+</recipes_cookbook>
+</root>

@@ -1,0 +1,42 @@
+public class LAB2_Punkter
+{
+
+	public static void main(String[] args)
+	{
+		
+		System.out.println("PROGRAM: PUNKTER");
+				
+		LAB2_Punkter_KLASS2  p1 = new LAB2_Punkter_KLASS2 (2,1);
+		LAB2_Punkter_KLASS2  p2 = new LAB2_Punkter_KLASS2 (8,4);
+		LAB2_Punkter_KLASS2  p3 = new LAB2_Punkter_KLASS2 ();
+		//definerar tre punkter
+		
+		double d1 = p1.avstand();
+		double d2 = p2.avstand();
+		// avståndet till origo räknas i metoden avstand
+		
+		System.out.println("Avstånd till origo: ");
+		System.out.println(d1);
+		System.out.println(d2);
+		//printar avståndet till origo
+		
+		double d = p1.avstand(p2);
+		//avståndet mellan punkterna
+		
+		System.out.println("Avståndet mellan punkterna: ");
+		System.out.println(d);
+		
+		System.out.println("\nPunkterna: ");
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		//metoden toString anropas automatiskt (p1.toString()); behövs ej skrivas ut
+				
+	}
+}
+		
+		
+		
+		
+		
+			

@@ -1,0 +1,44 @@
+LINE {
+  display:block;
+}
+MAINTITLE {
+	font-family:Times;
+	font-size:100px;
+	margin-bottom:100px;
+	display:block;
+}
+TITLE {
+	text-transform:uppercase;
+	display:block;
+}
+PERSONA {
+	display:block;
+}
+SCNDESCR {
+	display:block;
+}
+PLAYSUBT {
+	font-family:Times;	
+	font-size:50px;
+	margin: 10px 0 10px 0;
+	display:block;
+}
+ACT>TITLE, SCENE>TITLE {
+	width:270px;
+	text-align:center;
+}
+SCENE>STAGEDIR {
+	font-style:italic;
+	margin: 10px 0 10px 0;
+	display:block;
+}
+SCENE {
+	counter-reset:section;
+}
+SPEECH>LINE {
+	counter-increment:section;
+	padding-left:10px;
+}
+SPEECH>LINE:after {
+	content:" " counter(section);
+}

@@ -1,0 +1,63 @@
+/*LABB 2. PROGRAM 1: LAB1_Raknare.java.
+ *  Innefattar:
+ *
+ *   - Skapa och använd objekt av olika standardklasser (String, Scanner, Integer, Double)
+ *   -Objekt och vektorer med objekt som parametrar och returtyper i olika metoder
+ * 
+ * 
+ * I detta program demonstreras olika punkter som visas */
+import java.util.*;
+
+public class LAB2_Punkter
+{
+
+	public static void main(String[] args)
+	{
+		
+		System.out.println("PROGRAM: PUNKTER\n");
+		
+		Scanner derp = new Scanner(System.in);
+		
+		System.out.println("Skriv den första punkten\n");
+		
+		int a=derp.nextInt();
+		int b=derp.nextInt();
+		
+		System.out.println("Skriv den andra punkten\n");
+
+		int c=derp.nextInt();
+		int e=derp.nextInt();
+		Punkt  p1 = new Punkt (a,b);
+		Punkt  p2 = new Punkt (c,e);
+		Punkt  p3 = new Punkt ();
+		//definerar tre punkter
+		
+		double d1 = p1.avstand();
+		double d2 = p2.avstand();
+		// avståndet till origo räknas i metoden avstand
+		
+		System.out.println("Avstånd till origo: ");
+		System.out.println(d1);
+		System.out.println(d2+"\n");
+		//printar avståndet till origo
+		
+		double d = p1.avstand(p2);
+		//avståndet mellan punkterna
+		
+		System.out.println("Avståndet mellan punkterna: ");
+		System.out.println(d);
+		
+		System.out.println("\nPunkterna: ");
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		//metoden toString anropas automatiskt (p1.toString()); behövs ej skrivas ut
+				
+	}
+}
+		
+		
+		
+		
+		
+			

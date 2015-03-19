@@ -1,0 +1,30 @@
+//main
+public class McDonalds 
+{
+	public static void main (String[] args)
+	{
+		
+		grillMaster hank = new grillMaster();
+		grillMaster pelle = new grillMaster();
+		clerk jenny = new clerk();
+		clerk tom = new clerk();
+		
+		pelle.name = "Pelle";
+		pelle.Jobb1();
+		pelle.fritid1();
+		pelle.familj1();
+							
+		hank.name = "Hank";
+		tom.Jobb2();
+		hank.fritid2();
+		hank.familj2();
+		
+		tom.name = "Tom";
+		tom.Jobb3();
+		tom.fritid3();
+		tom.familj3();
+
+		
+	}
+	
+}

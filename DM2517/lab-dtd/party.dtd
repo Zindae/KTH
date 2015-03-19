@@ -1,0 +1,76 @@
+
+<!ELEMENT party (title, date, starttime, endtime?, arranger, location, price?, OSAdate?, description?, contact?, host*, toastmaster*, menu?,guestlist?)>
+ <!ENTITY brkbar   "&#166;" >
+    <!ENTITY ccedil   "&#231;" >
+    <!ENTITY Ouml     "&#214;" >
+    <!ENTITY ouml     "&#246;">
+    
+<!ENTITY % p "(#PCDATA)"> 
+<!ENTITY % person "firstname,lastname">
+<!ENTITY % items "food*,drink*">
+
+    <!-- endtime ska förekomma noll eller en gång. (?) -->
+    <!-- price ska förekomma noll eller en gång. (?) -->
+    <!-- OSAdate ska förekomma noll eller en gång. (?) -->
+    <!-- description ska förekomma noll eller en gång. (?) -->
+    <!-- contact ska förekomma noll eller en gång. (?) -->
+    <!-- host ska kunna förekomma noll till många gånger.(*) -->
+    <!-- toastmaster ska kunna förekomma noll till många gånger.(*) -->
+    
+    <!-- menu som ska förekomma noll till en gång (?) --> 
+
+<!ELEMENT title %p;>
+<!ELEMENT date %p;>
+<!ELEMENT starttime %p;>
+
+<!ELEMENT endtime %p;> 
+<!ELEMENT arranger %p;>
+<!ELEMENT location %p;>
+<!ELEMENT price %p;> 
+<!ATTLIST price unit CDATA #IMPLIED> <!-- Elementet price ska ha ett optional attribut som heter unit. -->
+
+<!ELEMENT OSAdate %p;>
+
+<!ELEMENT description %p;> 
+
+<!ELEMENT contact (%person;, phone, email)> 
+
+    <!ELEMENT firstname %p;>
+    <!ELEMENT lastname %p;>
+    <!ELEMENT phone %p;>
+    <!ELEMENT email %p;>
+    
+<!ELEMENT host (%person;)> 
+<!ELEMENT toastmaster (%person;)> 
+
+<!ELEMENT menu (starter?, main_course, dessert?)>  <!--  0-1 starter --><!--  1 main_course, --><!-- 0-1 dessert.-->
+
+<!ELEMENT starter (%items;)>
+<!ELEMENT main_course (%items;)>
+<!ELEMENT dessert (%items;)>
+
+<!ELEMENT food %p;>
+<!ELEMENT drink %p;>
+
+<!ATTLIST food type (shellfish | fish | meat | vegetarian | dairy | other) #IMPLIED>
+<!ATTLIST drink type (beer | red_wine | white_wine | coffee | cognac | tea | punch | other) #IMPLIED>
+
+<!ELEMENT guestlist (guest*)> <!--  guestlist förekomma noll till en gång --><!--  En guestlist kan innehålla 0 till många gäster. -->
+<!ELEMENT guest (%person;, affiliation?, placementpreferences?, foodrestrictions?, drinkrestrictions?)> 
+    <!ELEMENT id EMPTY>
+    <!ATTLIST guest id ID #REQUIRED> <!--  Ett guest-element har ett obligatoriskt id-attribut som ska vara unikt inom XML-dokumentet  -->
+    <!ATTLIST guest sex (male | female | unknown) #REQUIRED> <!--  ett obligatoriskt sex-attribut som kan antaga något av värdena male, female eller unknown. -->
+    
+<!ELEMENT affiliation %p;>
+<!ELEMENT placementpreferences (id+)> <!-- Ett placementpreferences-element innehåller 1 till många element av typen id -->
+    <!ATTLIST id nextto (yes | no) #REQUIRED> <!-- Attributet nextto kan anta ett av värdena "yes" eller "no", -->
+    <!ATTLIST id id IDREF #REQUIRED>
+
+<!ELEMENT foodrestrictions (ingredient+)> <!--1 till många ingredient-element vilka kan antaga text-data.-->
+    <!ELEMENT ingredient %p;>
+    
+<!ELEMENT drinkrestrictions (drink+)> <!--   1 till många drink-element, exakt som definierats tidigare. -->
+
+
+
+

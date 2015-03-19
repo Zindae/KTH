@@ -1,0 +1,46 @@
+body {
+	color: #666;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+	overflow-x: hidden;
+}
+
+#wrapper {
+	background: #ffffff;
+	-webkit-box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+	width: 960px;
+	padding: 40px 35px 35px 35px;
+	margin: 50px auto 0 auto;
+}
+
+* {
+	background-color:#ffffff;
+}
+
+h1 {
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:21px;
+	color: #003366;
+	font-weight:normal;
+	background-color:#ffffff;
+}
+
+h2 {
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:14px;
+	color: #003366;
+	font-weight:bold;
+	background-color:#ffffff;
+}
+
+p {
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:9px;
+	color: #000000;
+}
+
+p.text {
+	color: #ff0000;
+}
+

@@ -1,0 +1,29 @@
+import javax.swing.JOptionPane;
+
+public class LAB4_LogIn_KLASS2
+{
+	String fuser;
+	String fpass;
+	
+	public LAB4_LogIn_KLASS2(String user, String pass) //en konstruktor som använder user och pass från main
+	{
+		fuser = user;
+		fpass = pass;
+		greet();
+	}
+	
+	private void greet() //metod som matar ut olika värden beroende på user och pass
+	{
+				
+		if (fpass.equals("Vilen") && fuser.equals("Gabriel"))
+		{
+			JOptionPane.showMessageDialog(null, "Välkommen " + fuser + "!\nDitt lösenord är: " + fpass, "RESULTAT", JOptionPane.PLAIN_MESSAGE);
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "Du skrev fel användarnamn (" + fuser + ") eller lösenord (" + fpass + ") \n\t\t Stick!", "FEL", JOptionPane.PLAIN_MESSAGE);
+		}
+	
+	}
+
+}

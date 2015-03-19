@@ -1,0 +1,26 @@
+
+public class Up1
+{
+	public static void main (String [] args)
+	{
+	int    k = 0;
+	int    m = 0;
+	int    n = 10;
+	
+	for (int i = 0; i < 5; i++)
+	{
+	    k = i + 1;
+	    m = 0;
+	
+	for (int j = 0; j < 10; j++)
+	{
+	    System.out.print ((n + m) + " ");
+	m += k;
+	}
+	
+	System.out.println ();
+	n += 10;
+	
+	}
+  }
+}

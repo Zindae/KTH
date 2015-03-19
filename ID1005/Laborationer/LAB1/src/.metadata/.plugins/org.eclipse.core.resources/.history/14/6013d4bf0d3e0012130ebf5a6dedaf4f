@@ -1,0 +1,45 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+public class LAB3_Skapa_Fil_KlASS2
+{
+	java.util.Scanner read = new java.util.Scanner (System.in);
+	
+	private Formatter x;
+	//håller x i formatter
+	
+	public void openFile()
+	{
+		try
+		{
+			System.out.println("Skriv namnet på filen du vill skapa, avsluta med .txt");
+			String svar  = read.nextLine();
+			
+			x = new Formatter(svar);
+			System.out.println("Du skapade en fil som heter " + svar + "på platsen C:\Users\Gabriel\Documents\Programmering\Java\Laborationer\src\LAB3");
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Nått gick fel!");
+		}
+	
+	}
+	
+	public void  addRecords()
+	{
+		System.out.println("Vad vill du skriva i din fil?");
+		String skrift = read.nextLine();
+		
+		x.format(skrift);
+		//lägger in denna data i filen
+	}
+	
+	public void closeFile()
+	{
+		x.close(); 
+		//stänger filen så ingen 
+	}
+
+}

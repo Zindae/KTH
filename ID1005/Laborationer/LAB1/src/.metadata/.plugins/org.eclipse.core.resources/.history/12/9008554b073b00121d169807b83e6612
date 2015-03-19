@@ -1,0 +1,27 @@
+public class LAB3_Klockan 
+{
+	public static void main(String[] args)
+	{
+		
+	java.util.Scanner read = new java.util.Scanner (System.in);
+		
+	Arv objekt = new Arv();
+	
+	System.out.println("Skriv timme:");
+	int a = read.nextInt();
+	
+	System.out.println("Skriv minut:");
+	int b = read.nextInt();
+	
+	System.out.println("Skriv sekund:");
+	int c = read.nextInt();
+	
+	System.out.println("Klockan är: ");
+	objekt.setTid(a,  b , c);
+	//använder setTid som använder värderna i objekt
+	
+	System.out.println(objekt.vanligTid());
+
+	}
+
+}

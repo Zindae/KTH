@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>IMG </title>
+
+   <link rel="stylesheet" href="css/home.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<iframe style="display:none" id="targetFrame" src="" width="100%" height="auto" frameBorder="0"></iframe>
+
+<div class="wrapper" onclick="">
+	<div class="page">
+		
+		<div class="imageMap" aria-haspopup="true">
+			<img src="metro_map_simple.png" alt="" />
+			<div class="hotspots">
+				<div title="click/tap to go to the monkey page"><a href="http://en.wikipedia.org/wiki/Monkey" class="p1" rel="nofollow" aria-haspopup="false"></a><p><strong>Monkey</strong>Monkeys are generally considered to be intelligent. Unlike apes, monkeys usually have tails.</p><b class="b1"></b></div>
+				<div title="click/tap to go to the vulture page"><a href="http://en.wikipedia.org/wiki/Vulture" class="p2" rel="nofollow" aria-haspopup="false"></a><p><strong>Vulture</strong>A particular characteristic of many vultures is a bald head, devoid of normal feathers.</p><b class="b2"></b></div>
+				<div title="click/tap to go to the ostrich page"><a href="http://en.wikipedia.org/wiki/Ostrich" class="p3" rel="nofollow" aria-haspopup="false"></a><p><strong>Ostrich</strong>The ostrich is farmed around the world, particularly for its feathers, which are decorative and are also used as feather dusters.</p><b class="b3"></b></div>
+				<div title="click/tap to go to the zebra page"><a href="http://en.wikipedia.org/wiki/Zebra" class="p4" rel="nofollow" aria-haspopup="false"></a><p><strong>Zebra</strong>Zebras are several species of African equids (horse family) united by their distinctive black and white stripes. Their stripes come in different patterns, unique to each individual.</p><b class="b4"></b></div>
+				<div title="click/tap to go to the snake page"><a href="http://en.wikipedia.org/wiki/Snake" class="p5" rel="nofollow" aria-haspopup="false"></a><p><strong>Snake</strong>Snakes are elongate, legless, carnivorous reptiles of the suborder Serpentes that can be distinguished from legless lizards by their lack of eyelids and external ears.</p><b class="b5"></b></div>
+				<div title="click/tap to go to the tiger page"><a href="http://en.wikipedia.org/wiki/Tiger" class="p6" rel="nofollow" aria-haspopup="false"></a><p><strong>Tiger</strong>Tigers are among the most recognisable and popular of the world's charismatic megafauna. They have featured prominently in ancient mythology and folklore.</p><b class="b6"></b></div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-showcase-2.2.min.js"></script>
+
+<script src="js/hammer.min.js"></script>
+<script src="js/hammer.jquery.min.js"></script>
+
+<script type="text/javascript">
+
+location.hash = "";
+
+    function closep() {
+        window.location.reload();
+    }
+
+    function prev(){
+        document.getElementById('targetFrame').contentWindow.$('ul').previous();
+    }
+    function next(){
+        document.getElementById('targetFrame').contentWindow.$('ul').next();
+    }
+    function goto0(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(0);
+    }
+    function goto1(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(1);
+    }
+    function goto2(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(2);
+    }
+    function goto3(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(3);
+    
+    }
+
+
+  function changeImage() {
+
+        if (document.getElementById("imgClickAndChange").src == "img/4/02.jpg") 
+        {
+            document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
+        }
+        else 
+        {
+            document.getElementById("imgClickAndChange").src = "img/minimize.png";
+        }
+    }
+
+$(function(){  
+    
+    /*  var red = document.querySelectorAll("#footer, #footer1, #footer2, #footer3");*/
+        var foot = document.getElementById("footer");
+        var foot1 = document.getElementById("footer1");
+        var foot2 = document.getElementById("footer2");
+        var foot3 = document.getElementById("footer3");
+        var foot4 = document.getElementById("footer4");
+        var foot5 = document.getElementById("footer5");
+
+//Swipe
+    Hammer(foot).on("swipeleft", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').next();
+    });
+
+      Hammer(foot1).on("swipeleft", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').next();
+    });
+
+    Hammer(foot).on("swiperight", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').previous();
+    });
+    
+      Hammer(foot1).on("swiperight", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').previous();
+    });
+});
+
+
+$(function(){
+    $('#targetFrame').load(function(){
+        $(this).show();
+        console.log('load the iframe')
+    });
+
+});
+ 
+  $("#kung,#tekniska,#tc,#stadion").on("play", function (me) {
+         jQuery('audio').each(function (i,e) {
+              if (e != me.currentTarget)
+              { 
+                  this.pause(); 
+              }
+         });
+ });
+
+
+ $( "div#click1" ).click(function() {
+        
+        $('#targetFrame').attr('src', '1p.html'); 
+        $("#targetFrame",window.document).height(250);
+         $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('kung').play();
+  } else {
+       document.getElementById('kung').pause();
+
+}
+
+});
+ $( "area#click1" ).click(function() {
+        
+        $('#targetFrame').attr('src', '1p.html'); 
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('kung').play();
+  } else {
+       document.getElementById('kung').pause();
+
+}
+});
+$( "div#click2" ).click(function() {
+        
+        $('#targetFrame').attr('src', '2p.html'); 
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tc').play();
+  } else {
+       document.getElementById('tc').pause();
+
+}
+});
+$( "area#click2" ).click(function() {
+        
+        $('#targetFrame').attr('src', '2p.html'); 
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tc').play();
+  } else {
+       document.getElementById('tc').pause();
+
+}
+});
+$( "div#click3" ).click(function() {
+        
+        $('#targetFrame').attr('src', '3p.html'); 
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('stadion').play();
+  } else {
+       document.getElementById('stadion').pause();
+
+}
+});
+$( "area#click3" ).click(function() {
+        
+        $('#targetFrame').attr('src', '3p.html'); 
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('stadion').play();
+  } else {
+       document.getElementById('stadion').pause();
+
+}
+});
+$( "div#click4" ).click(function() {
+        
+        $('#targetFrame').attr('src', '4p.html'); 
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tekniska').play();
+  } else {
+       document.getElementById('tekniska').pause();
+
+}
+});
+$( "area#click4" ).click(function() {
+        
+        $('#targetFrame').attr('src', '4p.html'); 
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tekniska').play();
+  } else {
+       document.getElementById('tekniska').pause();
+
+}
+});
+$( "div#click5" ).click(function() {
+        
+        $('#targetFrame').attr('src', '5p.html'); 
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+});
+$( "area#click5" ).click(function() {
+        
+        $('#targetFrame').attr('src', '5p.html'); 
+});
+
+$( "#content" ).click(function() {
+        
+        $('#targetFrame').attr('src', ''); 
+
+
+});
+
+$('#content').click(function(){
+     $('audio').each(function() {
+     if(!this.paused){
+        this.pause();
+     }
+    });
+});
+
+
+(function($){  //This functions first parameter is named $
+   $(window).load(function(){
+        $('#container').ShowCase();
+   })
+})(jQuery);  
+
+
+$( "#content" ).click(function() {
+
+$('#container').addClass('map_maximize');
+
+$("#targetFrame",window.document).height(0);
+
+
+});
+
+
+/* 
+$('#page1').click(function(e) {
+     // do something fancy
+    javascript:void(0);
+     e.preventDefault(); // same thing as above
+});
+*/
+
+ $("#grid").hide();
+
+ $('#imgClick').click(function() {
+  var clicks = $(this).data('clicks');
+  if (clicks) {
+
+  /*   $('#footer_btn').animate({
+    opacity: 0,
+    height: '0'
+  }, 1000, function() {
+    // Animation complete.
+    
+
+  });*/
+
+ $( "#footer_btn" ).slideDown();
+
+      $( "#grid" ).slideDown();
+
+
+  } else {
+ $( "#grid" ).slideUp();
+
+        
+  }
+  $(this).data("clicks", !clicks);
+});
+
+/*global console, $*/
+/*jslint browser: true*/
+
+
+
+/* (function () {
+    "use strict";
+
+
+    $.fn.detectPinch = function () {
+        var numTouches = 0;
+
+        // each finger touch triggers touchstart
+        // (even if one finger is already touching)
+        $(document).on('touchstart', function (event) {
+            // if numTouches is more than 1, reset it to 0
+            // or else you can have numTouches >= 2 when
+            // actually only one finger is touching
+            numTouches = (numTouches > 1) ? 0 : numTouches;
+            // if numTouches is 0 or 1, increment it
+            numTouches = (numTouches < 2) ? numTouches += 1 : 2;
+            console.log(numTouches + ' start');
+
+        }).on('touchend', function (event) {
+            // another safety check: only decrement if > 0
+            numTouches = (numTouches > 0) ? numTouches -= 1 : 0;
+            console.log(numTouches + ' end');
+
+        });
+
+        // all event objects inherit this property
+        $.Event.prototype.isPinched = function () {
+            return (numTouches === 2) ? true : false;
+        };
+        return this;
+    };
+
+    $(document).ready(function (event) {
+        // call the method we added to the prototype
+        $(document).detectPinch();
+
+        $("#posts").on("click", "img", function (event) {
+            $(this).css('visibility', 'hidden');
+            $('#lbBlack').css('top', $(document).scrollTop());
+            $('#lbImg').attr('src', $(this).attr('src'));
+            $('#lbBlack').css('width', $(window).width());
+            $('#lbBlack').css('height', window.innerHeight);
+            $('#lbBlack').fadeIn(500);
+            $('#lbImg').css('margin-top', ((window.innerHeight - $('#lbImg').height())) / 2);
+            document.body.style.overflow = "hidden";
+        });
+
+        $('#lbBlack').on("click", "#lbImg, body", function (event) {
+            $('#lbBlack').fadeOut(500);
+            $('#posts img').css('visibility', 'visible');
+            document.body.style.overflow = "visible";
+        });
+
+    }).on('touchmove', function (event) {
+        // prevent one-finger movements
+        if (!event.isPinched()) {
+            event.preventDefault();
+            console.log('prevented');
+        }
+
+    });
+}());*/
+
+</script>
+<script src="js/classie.js"></script>
+        <script src="js/uiMorphingButton_inflow.js"></script>
+        <script>
+            (function() {
+                new UIMorphingButton( document.querySelector( '.morph-button' ) );
+
+                // for demo purposes only
+                [].slice.call( document.querySelectorAll( 'form button' ) ).forEach( function( bttn ) { 
+                    bttn.addEventListener( 'click', function( ev ) { ev.preventDefault(); } );
+                } );
+            })();
+        </script>
+       <!--<div id="drop-area" class="drop-area">
+            <div>
+                <div class="drop-area__item"><div class="dummy"></div></div>
+                <div class="drop-area__item"><div class="dummy"></div></div>
+                <div class="drop-area__item"><div class="dummy"></div></div>
+                <div class="drop-area__item"><div class="dummy"></div></div>
+            </div>
+        </div>
+        <div class="drop-overlay"></div>-->
+        <script src="js/draggabilly.pkgd.min.js"></script>
+        <script src="js/dragdrop.js"></script>
+        <script>
+            (function() {
+                var body = document.body,
+                    dropArea = document.getElementById( 'drop-area' ),
+                    droppableArr = [], dropAreaTimeout;
+
+                // initialize droppables
+                [].slice.call( document.querySelectorAll( '#drop-area .drop-area__item' )).forEach( function( el ) {
+                    droppableArr.push( new Droppable( el, {
+                        onDrop : function( instance, draggableEl ) {
+                            // show checkmark inside the droppabe element
+                            classie.add( instance.el, 'drop-feedback' );
+                            clearTimeout( instance.checkmarkTimeout );
+                            instance.checkmarkTimeout = setTimeout( function() { 
+                                classie.remove( instance.el, 'drop-feedback' );
+                            }, 800 );
+                            // ...
+                        }
+                    } ) );
+                } );
+
+                // initialize draggable(s)
+                [].slice.call(document.querySelectorAll( '#grid .grid__item' )).forEach( function( el ) {
+                    new Draggable( el, droppableArr, {
+                        draggabilly : { containment: document.body },
+                        onStart : function() {
+                            // add class 'drag-active' to body
+                            classie.add( body, 'drag-active' );
+                            // clear timeout: dropAreaTimeout (toggle drop area)
+                            clearTimeout( dropAreaTimeout );
+                            // show dropArea
+                            classie.add( dropArea, 'show' );
+                        },
+                        onEnd : function( wasDropped ) {
+                            var afterDropFn = function() {
+                                // hide dropArea
+                                classie.remove( dropArea, 'show' );
+                                // remove class 'drag-active' from body
+                                classie.remove( body, 'drag-active' );
+                            };
+
+                            if( !wasDropped ) {
+                                afterDropFn();
+                            }
+                            else {
+                                // after some time hide drop area and remove class 'drag-active' from body
+                                clearTimeout( dropAreaTimeout );
+                                dropAreaTimeout = setTimeout( afterDropFn, 400 );
+                            }
+                        }
+                    } );
+                } );
+            })();
+        </script>
+</body>
+</html>

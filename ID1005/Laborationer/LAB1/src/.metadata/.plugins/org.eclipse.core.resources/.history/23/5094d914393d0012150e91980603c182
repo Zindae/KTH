@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class createfile {
+
+	public static void main(String[] args) {
+		
+		final Formatter x; 
+		// formatter skriver strängar till filen x
+		
+		try
+		{
+			x = new Formatter("Javafil.txt");
+			System.out.println("Du gjorde en fil");
+		}
+		catch(Exception e) //error samma som exception, om det inte funkar
+		{
+			System.out.println("Nånting gick fel!");
+		}
+		
+
+	}
+
+}

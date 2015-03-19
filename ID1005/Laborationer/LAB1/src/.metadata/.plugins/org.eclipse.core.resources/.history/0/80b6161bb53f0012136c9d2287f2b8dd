@@ -1,0 +1,9 @@
+
+public class clerk extends staff //extends ärver info från staff
+{
+	public void serve()
+	{
+		System.out.println("Jag serverar");
+	}
+
+}

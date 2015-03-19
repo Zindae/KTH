@@ -1,0 +1,44 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="menu">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="menu_item" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="menu_id"/>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="url"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="recipes_cookbook">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="front_recipes" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="recipe_id"/>
+                    <xs:element type="xs:anyURI" name="img"/>
+                    <xs:element type="xs:string" name="title"/>
+                    <xs:element type="xs:string" name="alt"/>
+                    <xs:element type="xs:string" name="ingredients"/>
+                    <xs:element type="xs:string" name="directions"/>
+                    <xs:element type="xs:string" name="similar"/>
+                    <xs:element type="xs:string" name="date"/>
+                    <xs:element type="xs:string" name="reviews"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

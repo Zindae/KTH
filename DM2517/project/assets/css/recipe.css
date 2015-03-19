@@ -1,0 +1,119 @@
+/*
+Theme Name: Recipe.css
+Description: Recipe CSS
+Author: Christopher State
+*/
+
+*{
+   margin:0;
+   padding:0;
+}
+body {
+	margin:0;
+	font-family:Lucida Sans,"Helvetica Neue",Helvetica,sans-serif;
+	font-size:13px;
+	line-height:20px;
+	color:gray;
+	background-color:#fff;
+}
+a {
+	color:#221f1f;
+	text-decoration:none;
+}
+ul{
+	list-style-type: none;
+}
+h1,h2,h3,h4,h5,h6 {
+	margin:10px 0;
+	font-family:inherit;
+	font-weight:bold;
+	line-height:20px;
+	color:#221f1f;
+	text-align: left;
+}
+h1{
+	font-size: 24pt;
+}
+h2{
+	font-size: 17pt;
+}
+.tooltip{
+	display: inline-block;
+	position: relative;
+}	
+.tooltip:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+.tooltip:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 98;
+    white-space: nowrap;
+}
+.header{
+	padding:50px 20px;
+}
+.htop{
+	margin-bottom:25px;
+	line-height: 35px;
+}
+.hreviews{
+	background-image: url('roundedstars.png');
+	background-repeat: no-repeat;
+	position: relative;
+	height:30px;
+	float:left;
+}
+.hreviews a{
+	margin:0px 90px;	
+}
+.rwimg{
+	margin-top:60px;
+}
+.popover-content{
+	padding:9px 14px;
+	margin-top:-90px;
+	margin-left:80px;
+	width:300px;
+	font-style: italic;
+}
+#ingredients,#directions,#similar,#reviews,.facts{
+	margin-top:20px;
+}
+#ingredients ul{
+	margin-left:15px;
+}
+#directions ol{
+	margin-left:25px;
+}
+#reviews p{
+	margin-left:20px;
+	font-style:italic;
+}
+.facts p{
+	margin-left:25px;
+}
+#footer{
+	margin-top:25px;
+}
+.validators{
+	margin-top:20px;
+}
+.item{
+	border-bottom: 1px solid #DEDFDE;
+	padding:0.5em 0;
+}

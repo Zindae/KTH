@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Project 2</title>
+	
+	<script type='text/javascript' src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type='text/javascript' src="http://d3js.org/d3.v3.min.js"></script>
+	<script type='text/javascript' src="bullet.js"></script>
+	<script type='text/javascript' src="men.js"></script>
+	<script type='text/javascript' src="compare.js"></script>
+	<script type='text/javascript' src="main.js"></script>
+
+   	<link rel="stylesheet" href="layout.css" type="text/css" media="screen">
+</head>
+<body>
+	<div id="content">
+
+
+<h1> Project 2 - DH2321 </h1>
+<p>This is the second project for DH2321. The project should create and document an analytical trail through surveys of the World Value Survey (WVS) and visualize that trail with the help of D3.js. 
+After looking through the questions of the surveys, I wanted to see if there are any correlations between questions concerning womans independece and male dominance. 
+I then decided to rank the countries after these specific questions - 
+
+<ul>
+
+<li> Do men make better business executive than woman do?</li>
+<li> Should men have more right to a job then a woman?</li>
+<li> Do men make better polical leaders than woman do? </li> 
+<li>Is University is more important for a boy than for a girl?</li>
+
+</ul> </p> 
+
+			<p>For the visualisation I decided to use a bar graph to show the ranking. By hovering over the different parts of the bar you can see what question that bar represents and the data for this questions for the country.
+		When hovering over the questions, the question gets highlighted in the chart as well.</p>
+
+		
+	<table id="ranking-chart">
+			<tr>
+				<td class="men-chart"></td>
+				
+			</tr>
+		</table>
+
+<p>
+The visualisation of the potential correlation of the emancipation of the country and the selected questions is shown as a scatter plot. 
+The rank is then compared with following questions:
+<ul><li>Justifiable: abortion</li>
+<li>Justifiable: For a man to beat his wife</li>
+<li>Justifiable: homosexuality</li>
+<li>Justifiable: prostitution</li>
+<li>Child needs a home with father and mother</li></ul>
+
+Hovering over a dot in the plot will show the name of the country.</p>
+
+
+
+		<p><strong>Conclusions:</strong> For most of the selected questions concerning justifiablity once can observe a trend that there is indeed a correlation between the 'man dominance' of that country and the justifiablity of the subject.
+		Slovenia seems to be an outlier in almost all of these questions.
+		You still have to be careful not to draw conclusions too fast, because even though it might look like a correlation the results aren't clear enough to conclude the correlation with absolute certainty.</p>
+		<div id="scatterplot">
+		<br/>
+
+			<select class="compare-questions" size="1">
+				<option value="justifiable_beat" selected>Justifiable: For a man to beat his wife</option>
+				<option value="justifiable_homosexuality">Justifiable: Homosexuality</option>
+				<option value="justifiable_prostitution">Justifiable: Prostitution</option>
+				<option value="father_and_mother">A child needs a home with both a father and a mother to grow up happily</option>
+			</select><br />
+			<div class="compare-chart"></div>
+		</div>
+
+		
+		
+	</div>	
+</body>
+</html>

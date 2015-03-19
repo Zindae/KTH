@@ -1,0 +1,21 @@
+import javax.swing.JOptionPane; //importerar sakerna som behövs till GUI
+
+public class GUI 
+{
+	public static void main (String[] args)
+	{
+		String s1 = JOptionPane.showInputDialog("Skriv nummer ett");
+		String s2 = JOptionPane.showInputDialog("Skriv nummer två");
+		//detta sparar nummret man skriver i s1 ,s2
+		
+		int n1 = Integer.parseInt(s1);
+		int n2 = Integer.parseInt(s2); 
+		//konverterar strängen till int
+		
+		int sum = n1 + n2;
+		
+		JOptionPane.showMessageDialog(null, "Svaret är " + sum, "Titel", JOptionPane.PLAIN_MESSAGE);
+		//visar upp meddelandet på skärmen
+		//första argumentet är noll, andra visar svaret
+	}
+}

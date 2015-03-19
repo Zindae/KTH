@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+
+body {
+  font-size: 10px;
+  background: rgba(0,0,0, 0.72);
+  color:#fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.axis line {
+  display: none;
+}
+
+.axis path {
+  display: none;
+}
+.tick {
+  display: none;
+}
+.axis + .axis g text {
+  display: none;
+}
+
+/*stacked graph*/
+#hour-label {
+  font-size: 6px;
+  font-family: Arial;
+  stroke: #fff;
+  stroke-width: 0.4px;
+  font-family: 'Open Sans', sans-serif;
+}
+.graph{
+
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+   
+}
+
+.imgDescription {
+display:none;
+
+}
+.showDetails {
+ display: block;
+}
+#minute a:hover + .imgDescription {
+  display: block;
+}
+
+</style>
+<body>
+
+ <div class="row">
+        <div class="col-md-8">
+          <h2 style="color:#fff;">Energy Costs</h1>
+  </div>
+
+
+<h3> The aim of this project was to visualize the data from home utilites (energy, hot water, cold water) consumtion over a period of time. 
+
+I started looking at the data and figured that I had to make small selection of the data to visualize the protoytpe in a better way. I only focused on one of the houeholds and tried to visualize the energy consumption during 24 hours. Midnigth is at the top and moving clockwise, we reach noon at the bottom. 
+
+
+I needed to experiment with the imported data. Initially the visulization didn't look good beacuse there where different values and units for the energy and water consumption. I therefore tried to do some data transformation and to represent it in a better way.  I also tried different colors to balance and get the right feeling. which is important in a ambient visualization. 
+
+<p>The green color is representing Energy Consumption</p>
+<p>Red color - Warm water consumption</p>
+<p>Blue color - Cold water consumption</p>
+
+
+Inside the "ring" you can hover over a clock, the smallest circle is respresenting seconds, and then the following one is minutes, hours, days and months.  </h3>
+
+<a href="index_home.html">Back</a>
+
+
+<div class="row">
+  <div id="canvas">
+
+            <div class="graph"><div id="stackedgraph"></div>
+             <div id="clock"></div></div>
+         
+        </div> 
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>

@@ -1,0 +1,93 @@
+/*LABB 2. PROGRAM 2: LAB1_Stringbuilder.java.
+ *  Innefattar:
+ *
+ *   - Skapa och använd objekt av olika standardklasser (String, Scanner, Integer, Double)
+ *   -Objekt och vektorer med objekt som parametrar och returtyper i olika metoder
+ * 
+ * 
+ * I detta program demonstreras olika strängar som ändras med stringbuilder */
+
+import static java.lang.System.out;
+
+public class LAB2_StringBuilder 
+{
+	
+	public static void main(String[] args)
+	{
+		java.util.Scanner read = new java.util.Scanner (System.in);
+		
+		System.out.println("PROGRAM 2: StringBuilder\n\nSkriv mening ett: ");
+		
+		String a  = read.nextLine();
+						
+		StringBuilder s1 = new StringBuilder(a);
+		
+		out.println("\nMening ett: " + s1);
+		
+		/*"\nLängden av mening ett: " + s1.length());
+		out.println("Kapacitet av mening ett: " + s1.capacity());
+	    out.println("\nSkriv mening två: ");*/
+		
+		String b = read.nextLine();
+		StringBuilder s2 = new StringBuilder(b);
+		
+		out.println("\nMening två: " + s2);
+		
+		/*"\nLängden av mening två: " + s2.length());
+		out.println("Kapacitet av mening två: " + s2.capacity());*/
+				
+		s1.append(s2);
+		//utökar s1 med s2 
+		
+		out.println("\nMeningarna sammansatta: \n" + s1);
+				
+		out.println("\nSkriv mening tre: ");
+		
+		String c = read.nextLine();
+		StringBuilder s3 = new StringBuilder(c);
+		
+		out.println("\nMening tre: " + s3);
+		
+		/*"\nLängden av mening tre: " + s3.length());
+		out.println("Kapacitet av mening tre: " + s3.capacity());*/
+		
+		s1.append(s3);
+		
+		out.println("\nSlutlig mening: \n" + s1 + "\n");
+		
+		System.out.println("Vad vill du göra med din mening?\nSKRIV:\n\n" +
+				"B: Meningen baklänges\n" +
+				"L: Visar längden av meningen\n" +
+				"K: Kapaciteten av meningen\n" +
+				"C: Bokstaven på index 4\n" +
+				"D: Ta bort meningen");
+		
+		String svar = read.nextLine();
+		
+		System.out.println("\n----------------------------RESULTAT-------------------------------------------\nDu svarade ");
+		
+		if(svar.equals("B"))
+		{
+			out.print("Meningen baklänges: " + s1.reverse()); 
+		}
+		if(svar.equals("L"))
+		{
+			out.print("Meningens längd: " + s1.length()); 
+		}
+		if(svar.equals("K"))
+		{
+			out.print("Meningens kapacitet: " + s1.capacity()); 
+		}
+		if(svar.equals("C"))
+		{
+			out.print("Vilket index vill du veta? ");
+			int index = read.nextInt();
+			out.print("Din bokstav på index " + index + " är " + s1.charAt(index));
+						
+		}
+		
+			    
+							
+	}
+
+}

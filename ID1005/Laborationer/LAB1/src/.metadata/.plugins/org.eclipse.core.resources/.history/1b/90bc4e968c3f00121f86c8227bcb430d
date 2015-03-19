@@ -1,0 +1,35 @@
+//main
+import static java.lang.System.out;
+
+import java.util.*;
+
+public class LAB4_Datum
+{
+	public static void main (String[] args)
+	{
+		Scanner read = new Scanner(System.in);
+	
+		System.out.println("---------------------PROGRAM: Datum--------------------------------\n");
+		
+		System.out.println("Hur gammal är du?");
+		int a = read.nextInt();
+		
+		System.out.println("Vilken månad föddes du?");
+		String b = read.nextLine();
+			
+		System.out.println("Vilket datum i månaden föddes du?");
+		int c = read.nextInt();
+		
+		int år = 2012 - a;
+		
+		if(b.equals("januari"))
+		{
+			int b == 1;
+			//reverse kastar om s1 
+		}
+
+		LAB4_Datum_KLASS2 objekt = new LAB4_Datum_KLASS2(år,mån,c);
+		//använder värderna inom parantesen i konstruktorn i KLASS2
+		
+	}
+}

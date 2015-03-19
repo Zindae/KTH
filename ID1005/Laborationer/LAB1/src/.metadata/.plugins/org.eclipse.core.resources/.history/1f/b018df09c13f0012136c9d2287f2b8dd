@@ -1,0 +1,29 @@
+import javax.swing.JOptionPane;
+
+public class LAB4_LogIn_KLASS2
+{
+	private String fpass;
+	private String fname; //private strängar eftersom dessabara används i denna klass
+
+	public LAB4_LogIn_KLASS2
+	{
+		fname = name;
+		fpass = pass;
+		
+		svar();
+	}
+
+	public void svar() //metoden svar skriver ut resultatet beroende på inmatningar
+	{
+
+		if (password.equals("vilen") && name.equals("gabriel"))
+		{
+			JOptionPane.showMessageDialog(null, "Du skrev rätt, välkommen!", "Svar:", JOptionPane.PLAIN_MESSAGE);
+		}
+		else
+		{
+				JOptionPane.showMessageDialog(null, "Du skrev fel username, GTFO", "Svar:", JOptionPane.PLAIN_MESSAGE);
+		}
+		
+	}
+	

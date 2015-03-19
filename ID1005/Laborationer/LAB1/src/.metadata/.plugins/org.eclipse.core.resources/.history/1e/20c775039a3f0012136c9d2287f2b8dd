@@ -1,0 +1,89 @@
+
+public class Punkt
+{
+	public static main (String[] args)
+{
+	private double x; 
+	private double y;
+	
+}
+
+//konstruktor som skapar förvald punkt
+
+public Punkt()
+{
+	x = 0;
+	y = 0;
+}
+
+//konstruktor som skapar punkt med given x-koordinat
+
+public Punkt(double x)
+{
+	this.x = x;
+	y = 0;
+}
+
+//konstruktor som skapar punkt med given x och y koordinat
+
+public Punkt(double x, double y)
+{
+	this.x = x;
+	this.y = y; 
+}
+
+public Punkt(punkt p) 
+{
+	this.x = p.x;
+	this.y = p.y;
+}
+
+//Get-metoder
+public double getX()
+{
+	return x;
+}
+
+public double getY()
+{
+	return y;
+}
+
+//Set-metoder
+public void setX(double x)
+{
+	this.x = x;
+}	
+public void setY(double y)
+{
+	this.y = y;
+}
+
+public String toString()
+{
+	String s = "";
+	
+	s = "(" + x ", " + y + ")";
+	
+	return s;
+}
+public double avstand()
+{
+	double d= 0;
+	
+	d = Math.sqrt(x * x + y * y);
+	
+	return d;
+}
+
+public double avstand(Punkt p)
+{
+	d = Math.sqrt((p.x - this.x) * (p.x - this.x)
+			    + (p.y - this.y) * (p.y - this.y)); 
+	
+	return d;
+	
+	
+}
+
+

@@ -1,0 +1,51 @@
+//Klass 2 i LAB3_Läs_Fil_KLASS2
+
+import java.util.*;
+import java.io.*;
+
+public class LAB3_Läs_Fil_KLASS2 
+{
+	private Scanner x;
+	private Scanner read = new Scanner (System.in);
+	//read läser från tangentbordet, x läser från fil
+	
+	public void openFile()
+	{
+		try
+		{
+			System.out.println("Skriv namnet på filen du vill öppna, avsluta med .txt");
+			
+			String svar = read.nextLine();
+			//Scannern read läser från tangentbordet
+			
+			x = new Scanner(new File(svar)); 
+			//Scannern x läser nu data från textfilen istället för tangentbordet
+			
+		}
+		catch(Exception e) //catch om try inte fungerar
+		{
+			System.out.println("ERROR - Kunde inte hitta filen");
+		}
+		
+	}
+	
+	public void readFile()
+	{
+		while(x.hasNext())
+		//hasNext är en inbyggd funktion som loopar innehåller och läser hela filen
+		{
+			String a = x.next();
+			//detta är värdet på första raden i filen 
+			
+			System.out.println(a);
+						
+		}
+	}
+	
+	public void closeFile() //stänger filen
+	{
+		x.close();
+	}
+		
+	
+}

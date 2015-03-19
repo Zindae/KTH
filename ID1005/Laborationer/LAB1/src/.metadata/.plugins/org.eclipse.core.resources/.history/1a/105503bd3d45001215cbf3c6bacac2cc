@@ -1,0 +1,24 @@
+
+public class Up15
+{
+	public static void main (String[] args)
+	{
+	StringBuilder [] v = new StringBuilder[4];
+	
+	if(v[]==null)
+	{System.out.println("strängen är null");
+	
+	}
+	v[0].append (25);
+	v[1].append (2.5);
+	v[2].append ("f");
+	v[3].append ("fg");
+	
+	String    u = java.util.Arrays.toString (v);
+	System.out.println (u);
+	
+	//Felet är att det försökt användas en referens som inte pekar till någonting
+	//programmet kommer förlänga strängen, '252.5ffg' kommer bli nya strägen
+	
+	}
+}

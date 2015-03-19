@@ -1,0 +1,15 @@
+//main
+public class LAB4_Datum
+{
+	public static void main (String[] args)
+	{
+		LAB4_Datum_KLASS2 objekt = new LAB4_Datum_KLASS2(1993,06,28);
+		//använder värderna inom parantesen i konstruktorn i KLASS2
+		
+		LAB4_Datum_KLASS3 objekt2 = new LAB4_Datum_KLASS3("Gabriel", objekt);
+		//används i KLASS3 (theName, theDate)
+		//varje gång man vill göra ett objekt till en sträng används toString metoden
+		
+		System.out.println(objekt2);
+	}
+}

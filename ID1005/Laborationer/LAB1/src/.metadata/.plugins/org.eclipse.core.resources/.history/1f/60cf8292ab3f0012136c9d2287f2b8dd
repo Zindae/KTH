@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane;
+
+
+public class Konstruktor2
+{
+	String fuser;
+	String fpass;
+	
+	public Konstruktor2(String user, String pass) //en konstruktor
+	{
+		fuser = user;
+		fpass = pass;
+		greet();
+	}
+	
+	private void greet()
+	{
+		System.out.println("\n------------------------------RESULTAT---------------------------------------\n");
+		
+		if (fpass.equals("vilen") && fuser.equals("gabriel"))
+		{
+			System.out.println("Välkommen " + fuser + "\nDitt lösenord är: " + fpass);
+		}
+		else
+		{
+			System.out.println("Du skrev fel användarnamn eller lösenord, stick!");
+		}
+	
+	}
+
+}

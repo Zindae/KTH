@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+
+import java.util.*;
+
+public class Konstruktor
+{
+	public static void main(String[] args)
+	{
+		//Konstruktor2 answer = new Konstruktor2(user, pass);
+		
+		Scanner read = new Scanner(System.in);
+		
+		Konstruktor2 answer = new Konstruktor2(user, pass);
+		
+     	System.out.println("----------------------------LOGGA IN-------------------------------------------\n");
+
+		System.out.println("Skriv användarnamnet: ");
+
+		String user = read.nextLine(); //sparar inmatningen i strängen user
+
+		System.out.println("Skriv lösenordet: ");
+
+		String pass = read.nextLine(); //sparar inmatningen i strängen answer
+		
+		System.out.println("\n-------------------------------------------------------------------------------");
+	}
+}
+
+

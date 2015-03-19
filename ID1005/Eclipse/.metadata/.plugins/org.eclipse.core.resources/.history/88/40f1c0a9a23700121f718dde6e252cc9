@@ -1,0 +1,69 @@
+
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+/**
+ * This class creates an application window containing the slot
+ * machine simulator. The application may interact with the simulator
+ * by calling on the methods in interface SlotControl.
+ * 
+ * @author fki@kth.se
+ *
+ */
+public class SlotFrame extends JFrame implements SlotControl 
+{
+	private SlotPanel sp = null;
+	
+	// In interface SlotControl
+	public int [][] getWheelModel() {
+		return sp.getWheelModel();
+	}
+	
+	// In interface SlotControl
+	public String getNextEvent() {
+		return sp.getNextEvent();
+	}
+	
+	// In interface SlotControl
+	public void setCredit(int n) {
+		sp.setCredit(n);
+	}
+	
+	// In interface SlotControl
+	public void win(int amount) {
+		sp.win(amount);
+	}
+	
+	// In interface SlotControl
+	public void roll(int [] ar) {
+		sp.roll(ar);
+	}
+
+	/**
+	 * Creates a new SlotFrame with the provided title for the
+	 * application window.
+	 * 
+	 * @param title The window title
+	 */
+	public SlotFrame(String title, boolean fallBackMode) {
+		super(title);
+		
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	    sp = new SlotPanel(fallBackMode);
+
+	    getContentPane().add(sp);
+	    pack();
+	    setVisible(true);
+	    
+	}
+	public static void main(String[] args) {
+		
+		
+		new SlotFrame("SlotMachine", true);
+
+	}
+	
+
+}

@@ -1,0 +1,42 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+public class createfile_KLASS2
+{
+	java.util.Scanner read = new java.util.Scanner (System.in);
+	
+	private Formatter x;
+	//håller x i formatter
+	
+	public void openFile()
+	{
+		try
+		{
+			System.out.println("Skriv namnet på filen du vill skapa, avsluta med .txt");
+			String svar  = read.nextLine();
+			
+			x = new Formatter(svar);
+			System.out.println("Du skapade en fil som heter " + svar);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Nått gick fel!");
+		}
+	
+	}
+	
+	public void  addRecords()
+	{
+		x.format("Tjenare!");
+		//lägger in denna data i filen
+	}
+	
+	public void closeFile()
+	{
+		x.close(); 
+		//stänger filen så ingen 
+	}
+
+}

@@ -1,0 +1,28 @@
+
+public class Arv 
+{
+	private int timme;
+	private int minut;
+	private int sekund;
+	
+	public void setTid(int h, int m, int s) 
+	//dessa int är a,b,c i main
+	{
+		timme = ( (h >= 0 && h < 24) ? h : 0);
+		minut = ( (m >= 0 && m < 60) ? m : 0);  
+		sekund = ( (s >= 0 && s < 60) ? s : 0);
+		//om värderna h,m,s är emellan värdena används strängarna
+		//annars förblir strängarna null
+	
+	}
+	
+	public String vanligTid()
+	{
+		return String.format("%02d: %02d: %02d", timme, minut, sekund); 
+		//formaterar strängen 
+		//visar strängarna  timme, minut, sekund efter två decimaler och adderar komma
+	}
+	
+	
+}
+

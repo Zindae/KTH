@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+
+body {
+  font-size: 10px;
+  background: rgba(0,0,0, 0.72);
+  color:#fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.axis line {
+  display: none;
+}
+
+.axis path {
+  display: none;
+}
+.tick {
+  display: none;
+}
+.axis + .axis g text {
+  display: none;
+}
+
+/*stacked graph*/
+#hour-label {
+  font-size: 6px;
+  font-family: Arial;
+  stroke: #fff;
+  stroke-width: 0.4px;
+  font-family: 'Open Sans', sans-serif;
+}
+.graph{
+
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+   
+}
+#canvas:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 40px solid rgba(150,150,148,0.2);
+   border-radius: 70% 50%;
+}
+#canvas {
+
+ position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    width: 350px;
+    height: 350px;
+    border: 20px solid rgba(150,150,148,0.2);
+   border-radius: 100% 100%;
+
+}
+#canvas:after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 10px solid rgba(150,150,148,0.3);
+   border-radius: 50% 70%;
+}
+#hour:hover {
+  fill: #fff !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+#minute:hover {
+  fill: #fff !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+#second:hover {
+  fill: #fff !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+#days:hover {
+  fill: #fff !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+#months:hover {
+  fill: #fff !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+#energy:hover {
+  fill: #7db941 !important; ;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+#warmwater:hover {
+  fill: #7c0b0b !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+#coldwater:hover {
+  fill: #177797 !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.imgDescription {
+display:none;
+
+}
+.showDetails {
+ display: block;
+}
+#minute a:hover + .imgDescription {
+  display: block;
+}
+
+</style>
+<body>
+
+ <div class="row">
+        <div class="col-md-8">
+          <h2 style="color:#fff;">Energy Costs</h1>
+  </div>
+
+<div class="row">
+  <div id="canvas">
+
+            <div class="graph"><div id="stackedgraph"></div>
+             <div id="clock"></div></div>
+         
+        </div> 
+</div>
+
+<a href="more.html"><button>More info</button></a>
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 400,
+    height = 400,
+    outerRadius = height / 2 - 10,
+    innerRadius = 140;
+
+
+var formatDate = d3.time.format("%I:%M %p"),
+    formatDay = function(d) { return formatDate(new Date(2007, 0, 0, d)); };
+
+var angle = d3.time.scale()
+    .range([0, 2 * Math.PI]);
+
+var radius = d3.scale.linear()
+    .range([innerRadius, outerRadius]);
+
+var colors = ["#B22222","#0099CC", "#caeba9"];
+
+var color = d3.scale.threshold()
+      .range(colors);
+
+var z = d3.scale.ordinal()
+    .range(colors);
+
+var stack = d3.layout.stack()
+    .offset("zero")
+    .values(function(d) { return d.values; })
+    .x(function(d) { return d.time; })
+    .y(function(d) { return d.value; });
+
+var nest = d3.nest()
+    .key(function(d) { return d.key; });
+
+var line = d3.svg.line.radial()
+    .interpolate("cardinal-closed")
+    .angle(function(d) { return angle(d.time); })
+    .radius(function(d) { return radius(d.y0 + d.y); });
+
+var area = d3.svg.area.radial()
+    .interpolate("cardinal-closed")
+    .angle(function(d) { return angle(d.time); })
+    .innerRadius(function(d) { return radius(d.y0); })
+    .outerRadius(function(d) { return radius(d.y0 + d.y); });
+
+var svg = d3.select("#stackedgraph").append("svg:svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  d3.csv("data.csv", type, function(error, data) {
+
+    var n = 0;
+    data.forEach(function(d) {
+      if(data[n].key == "warmwater" || data[n].key == "coldwater"){
+        data[n].value = data[n].value*15;
+      }
+    n++;
+  });
+
+
+    var layers = stack(nest.entries(data));
+
+  // Extend the domain slightly to match the range of [0, 2π].
+  angle.domain([0, d3.max(data, function(d) { return d.time + 1; })]);
+  radius.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+
+  svg.selectAll(".layer")
+      .data(layers)
+    .enter().append("path")
+      .attr("class", "layer")
+      .attr("d", function(d) { return area(d.values); })
+      .style("fill", function(d, i) { return z(i); })
+
+
+    document.getElementsByTagName("path")[0].setAttribute("id", "warmwater");
+    document.getElementsByTagName("path")[1].setAttribute("id", "coldwater");
+    document.getElementsByTagName("path")[2].setAttribute("id", "energy");
+
+    $("path").attr("class", "showDetails");
+
+  svg.selectAll(".axis")
+      .data(d3.range(angle.domain()[1]))
+    .enter().append("g")
+      .attr("class", "axis")
+      .attr("transform", function(d) { return "rotate(" + angle(d) * 180 / Math.PI + ")"; })
+    .call(d3.svg.axis()
+      .scale(radius.copy().range([-innerRadius, -outerRadius]))
+      .orient("left"))
+   .append("text")
+          .attr("y", -innerRadius + 9)
+          .attr("dy", ".71em")
+          .attr("text-anchor", "middle")
+          .attr("id", "hour-label")
+          .text(function(d) { return formatDay(d + 12); }); // text label on axis
+});
+
+function type(d) {
+  d.time = +d.time;
+  d.value = +d.value;
+  return d;
+}
+
+//Clock
+var width = 340,
+    height = 300,
+    n = 30,
+    r = width / 14,
+    margin = {top: 20, right: -45, bottom: 20, left: 10};
+
+var svg2 = d3.select("#clock").append("svg:svg")
+    .attr("width", width)
+    .attr("height", height );
+
+var ms = 1000,
+    s  = ms * 60,
+    m  = s  * 60,
+    h  = m  * 24;
+    
+var data = [
+    function(t) {
+        var b = +new Date(t.getFullYear(), 0, 1),
+            e = +new Date(t.getFullYear() + 1, 0, 1);
+        return (t - b) / (e - b);
+    },
+    function(t) {
+        var b = +new Date(t.getFullYear(), t.getMonth(), 1),
+            e = +new Date(t.getFullYear(), t.getMonth() + 1, 1);
+        return (t - b) / (e - b);
+    },
+    function(t) { return (t.getMilliseconds() + t.getSeconds() * ms + t.getMinutes() * s + t.getHours() * m) / h; },
+    function(t) { return (t.getMilliseconds() + t.getSeconds() * ms + t.getMinutes() * s) / m; },
+    function(t) { return (t.getMilliseconds() + t.getSeconds() * ms) / s; },
+  
+
+
+];
+
+var g = svg.append("g")
+    //.attr("transform", "translate(" + margin.right, margin.top + ")");
+     .attr("transform", "translate(" + margin.right + "," + margin.top + ")")
+
+
+
+
+    /* setInterval(function(io) {
+
+currentTime = new Date();
+var seconds = currentTime.getSeconds();
+      var minutes = currentTime.getMinutes();
+      var hours = currentTime.getHours();
+
+ g.append("g:text")
+  
+
+ //$("#time-button").text(timeStringForButton(currentTime.getUTCDay(), currentTime.getHours(), currentTime.getMinutes()));
+
+   .text(function(d) { return seconds; }); // text label on axis
+
+ g.append("g:text")
+   
+ .attr({
+      "alignment-baseline": "middle",
+      "text-anchor": "middle"
+    })
+   
+
+}, 1000)*/
+
+
+data.forEach(function(d, i) {
+
+    g = g.append("g")
+        .datum(function() { return d; })
+     
+
+        .attr("class", "dial");
+
+    g.append("circle")
+        .attr("r", width/2  * (1 - (i + 1) / (data.length + 1)))
+         .attr("fill", "#3d3d3d")
+        .attr("fill-opacity", 0.25)
+
+    
+      
+});
+
+g = d3.selectAll("g.dial");
+
+document.getElementsByTagName("circle")[0].setAttribute("id", "months");
+ document.getElementsByTagName("circle")[1].setAttribute("id", "days");
+
+    document.getElementsByTagName("circle")[2].setAttribute("id", "hour");
+    document.getElementsByTagName("circle")[3].setAttribute("id", "second");
+    document.getElementsByTagName("circle")[4].setAttribute("id", "minute");
+
+
+
+
+
+
+d3.timer(function() {
+    var t = new Date();
+    g.attr("transform", function(d) {
+        var p = d(t) * 2 * Math.PI - Math.PI / 2,
+            x = r * Math.cos(p),
+            y = r * Math.sin(p);
+
+
+        return "translate(" + [x, y] + ")";
+    });
+
+});
+
+</script>
+

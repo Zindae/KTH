@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="UTF-8">
+
+    <title>Prototype</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+    <!-- <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">-->
+    <meta name="viewport" content="minimal-ui">
+        <meta name="description" content="Grupp C1">
+
+        <link rel="stylesheet" href="css/home.css" type="text/css" media="screen" />
+        <script src="js/modernizr.custom.js"></script>
+        <!-- Internet Explorer -->
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+<body>
+
+    <audio id="kung">
+          <source src="audio/kung.mp3">
+          <source src="audio/kung.ogg">
+    </audio>
+    <audio id="stadion">
+          <source src="audio/stadion.mp3">
+          <source src="audio/stadion.ogg">
+    </audio>
+    <audio id="tc">
+          <source src="audio/tc.mp3">
+          <source src="audio/tc.ogg">
+    </audio>
+     <audio id="tekniska">
+          <source src="audio/tekniska.mp3">
+          <source src="audio/tekniska.ogg">
+    </audio>
+
+
+<iframe style="display:none" id="targetFrame" src="" width="100%" height="auto" frameBorder="0"></iframe>
+
+<div id="container">
+		
+		<div class="imageMap">
+
+			<div class="metromp"><img src="metro_map_simple.png" alt="" /></div>
+
+			<div class="hotspots">
+
+        <b class="b1">
+
+        <div id='click1' title="Kungsträdgården" alt="Kungsträdgården" class="SC_Bullet bullet_1" data-showcase='{ 
+                    "coords" : "71.5%,39",
+                    "flicker_time":"1000,500",
+                    "flicker_size":2.0,
+                    "flicker_opacity":"0.5,1",
+                    "flicker_color":"#0072bc,#0072bc",
+                    "flicker_image":"img/icon_bla.png",
+                    "border_radius":"0,0",
+                    "border_size":"0,0",
+                    "tooltip_offset":"-37,38",
+                    "tooltip_close" : "hover",
+                    "panel_coords" : "10,50" }'>
+
+  <div class="zoomin">
+
+                  <span><a id="page1" class="active" onclick="btn2();"><img src="img/blue_icon.png" /></a></span>
+    </div>
+
+
+        </div>
+
+
+       <div class="SC_Tooltip">   
+            <p></p>
+        </div>
+  <div class="SC_Panel panel">
+  <div class="popup_content" id="drop-area">
+                 
+    <div id="footer" align="center">   
+
+    <div id="docsbuttons">
+
+            <a class="nav" onClick="prev();"><img src="img/prev.png"/></a>
+
+            <span onClick="goto0();"><img src="img/1/01.jpg"/></span> &nbsp; 
+
+            <span onclick="goto1();"><img src="img/1/02.jpg"/></span> &nbsp; 
+
+            <span onclick="goto2();"><img src="img/1/03.jpg"/></span> &nbsp; 
+
+            <span onclick="goto3();"><img src="img/1/04.jpg" id="imgClick"/></span> &nbsp; 
+
+            <a class="nav" onClick="next();"><img src="img/next.png"/></a>
+
+    </div><br />
+                                    
+                <div id="grid" class="grid clearfix">
+                    <div class="grid__items1 grid__item"></div>
+                    <div class="grid__items2 grid__item"><i class="fa fa-fw fa-image"></i></div>
+                    <div class="grid__items3 grid__item"><i class="fa fa-fw fa-image"></i></div>
+                    <div class="grid__items4 grid__item"><i class="fa fa-fw fa-image"></i></div>
+                    <div class="grid__items5 grid__item"><i class="fa fa-fw fa-image"></i></div>
+                    <div class="grid__items6 grid__item"><i class="fa fa-fw fa-image"></i></div>
+                </div>  
+                            
+        <div id="footer_btn">
+            <img src="img/1/station_img_1.jpg" alt="" usemap="#logos1" />
+
+            <map name="logos1">
+            <area  href="javascript:void(0);" shape="circle" coords="97,82,23" id="click2" class="SC_Next" title="T-Centralen" alt="T-Centralen" />
+            <area  href="javascript:void(0);" shape="circle" coords="157,82,23" id="click1" title="Kungsträdgården" alt="Kungsträdgården" />
+            <area shape="default" nohref="nohref" title="Default" alt="Default"/>
+            </map>
+
+            <a id="clickclose" class="" onclick="closewindow();"><img id="closeid" src="img/close.png"/></a> 
+<!--
+&nbsp; &nbsp; &nbsp; 
+ 
+            <a id='clickclose' class="" onClick="window.location.reload()"><img src="img/close.png"/></a> -->
+        </div>
+               
+        </div>
+    </div>
+</div> 
+        </b>
+
+     <b class="b2">
+			
+  <!-- T-CENTRALEN -->
+ <div id="click2" title="T-Centralen" alt="T-Centralen" class="SC_Bullet bullet_2" data-showcase='{ 
+                    "coords" : "58.7%,39",
+                    "flicker_time":"1000,500",
+                    "flicker_size":2.0,
+                    "flicker_opacity":"0.5,1",
+                    "flicker_color":"#000000,#000000",
+                    "flicker_image":"img/icon_bla.png",
+                    "border_radius":"500,700",
+                    "border_size":"0,0",
+                    "tooltip_offset":"-37,38",
+                    "tooltip_close" : "hover",
+                    "panel_coords" : "10,50",
+                    "panel_effect" : "linear,linear" }'>
+
+                      <div class="zoomin">
+
+                  <span><a id="page2" class="active"><img src="img/tc_icon.png" /></a></span>
+    </div>
+        </div>
+        <div class="SC_Tooltip">    
+            <p></p>
+        </div>
+        <div class="SC_Panel panel">
+            <div class="popup_content" id="swipe">
+
+        
+    <div id="footer1" align="center">   
+
+   <!-- <img class="imagesrc" src="img/2/station_img.jpg" /> -->
+
+    <div id="docsbuttons">
+
+  <a class="nav" onClick="prev();"><img src="img/prev.png"/></a>
+
+            <span onclick="goto0();"><img src="img/2/01.jpg"/></span> &nbsp; 
+
+            <span onclick="goto1();"><img src="img/2/02.jpg"/></span> &nbsp; 
+
+            <span onclick="goto2();"><img src="img/2/03.jpg"/></span> &nbsp; 
+
+            <span onclick="goto3();"><img src="img/2/04.jpg"/></span> &nbsp; 
+
+            <a class="nav" onClick="next();"><img src="img/next.png"/></a>
+
+    </div><br />
+
+        <div id="footer_btn">
+           <img src="img/2/station_img_1.jpg" alt="" usemap="#logos2" />
+
+
+            <map name="logos2">
+            <area href="javascript:void(0);" shape="circle" coords="119,107,33" id="click2" title="T-Centralen" alt="T-Centralen" />
+            <area href="javascript:void(0);" shape="circle" coords="199,107,33" id="click1" class="SC_Prev" title="Kungsträdgården" alt="Kungsträdgården" />
+            <area shape="default" nohref="nohref" title="Default" alt="Default"/>
+            </map>
+<a id="clickclose" class="" onclick="closewindow();"><img id="closeid" src="img/close.png"/></a> 
+
+        </div>
+               
+        </div>
+    </div>
+</div>   
+          </b>    
+          <!-- STADION -->
+          <!-- <b class="b3">    
+
+<div id="click3" title="Stadion" alt="Stadion" class="SC_Bullet bullet_3" data-showcase='{ 
+                    "coords" : "57%,19",
+                    "flicker_time":"1000,500",
+                    "flicker_size":2.0,
+                    "flicker_opacity":"0.5,1",
+                    "flicker_color":"#bc0004,#bc0004",
+                    "flicker_image":"img/icon_rod.png",
+                    "border_radius":"500,700",
+                    "border_size":"0,0",
+                    "tooltip_offset":"-37,38",
+                    "tooltip_close" : "hover",
+                    "panel_coords" : "10,50" }'>
+
+
+                        <div class="zoomin">
+
+                  <span><a href="#page3" id="page3" class="active"><img src="img/red_icon.png" /></a></span>
+    </div>
+        </div>
+        <div class="SC_Tooltip">    
+            <p></p>
+        </div>
+        <div class="SC_Panel panel">
+                       <div class="popup_content">
+
+        
+    <div id="footer3" align="center">   
+
+
+    <div id="docsbuttons">
+
+            <a class="nav" onClick="location.href='#page3';prev();"><img src="img/prev.png"/></a>
+
+            <span onclick="location.href='#page3';goto0();"><img src="img/3/01.jpg"/></span> &nbsp; 
+
+            <span onclick="location.href='#page3';goto1();"><img src="img/3/02.jpg"/></span> &nbsp; 
+
+            <span onclick="location.href='#page3';goto2();"><img src="img/3/03.jpg"/></span> &nbsp; 
+
+            <span onclick="location.href='#page3';goto3();"><img src="img/3/04.jpg"/></span> &nbsp; 
+
+            <a class="nav" onClick="location.href='#page3';next();"><img src="img/next.png"/></a>
+
+    </div><br />
+
+        <div id="footer_btn">
+          <img src="img/3/station_img_1.jpg" alt="" usemap="#logos3" />
+          
+
+            <map name="logos3">
+            <area href="javascript:void(0);" shape="circle" coords="119,107,33" id="click4" class="SC_Next" title="Tekniska Högskolan" alt="Tekniska Högskolan" />
+            <area href="javascript:void(0);" shape="circle" coords="199,107,33" id="click3" title="Stadion" alt="Stadion" />
+            <area shape="default" nohref="nohref" title="Default" alt="Default"/>
+            </map>
+
+<a href="#" id="clickclose" class="" onclick="closewindow();"><img id="closeid" src="img/close.png"/></a> 
+
+        </div>
+               
+        </div>
+    </div>
+</div>   
+</b>-->
+<b class="b4">    
+ <!-- TEKNISKA HÖGSKOLAN -->
+<div id="click4" title="Tekniska Högskolan" alt="Tekniska Högskolan" class="SC_Bullet bullet_4" data-showcase='{ 
+                   "coords" : "57%,15",
+                    "flicker_time":"1000,500",
+                    "flicker_size":2.0,
+                    "flicker_opacity":"0.5,1",
+                    "flicker_color":"#bc0004,#bc0004",
+                    "flicker_image":"img/icon_rod.png",
+                    "border_radius":"500,700",
+                    "border_size":"0,0",
+                    "tooltip_offset":"-37,38",
+                    "tooltip_close" : "hover",
+                    "panel_coords" : "10,50" }'>
+
+        <div class="zoomin">
+
+                  <span><a id="page4" class="active"><img src="img/red_icon.png" /></a></span>
+    </div>
+        </div>
+        <div class="SC_Tooltip">    
+            <p></p>
+        </div>
+        <div class="SC_Panel panel">
+              <div class="popup_content">
+
+        
+    <div id="footer4" align="center">   
+
+    <!--<img class="imagesrc" src="img/4/station_img.jpg" /> -->
+
+    <div id="docsbuttons">
+
+            <a class="nav" onClick="prev();"><img src="img/prev.png"/></a>
+
+            <span onclick="goto0();"><img src="img/4/01.jpg"/></span> &nbsp; 
+
+            <span onclick="goto1();"><img src="img/4/02.jpg"/></span> &nbsp; 
+
+            <span onclick="goto2();"><img src="img/4/03.jpg"/></span> &nbsp; 
+
+            <span onclick="goto3();"><img src="img/4/04.jpg"/></span> &nbsp; 
+
+            <a class="nav" onClick="next();"><img src="img/next.png"/></a>
+
+    </div><br />
+
+        <div id="footer_btn">
+            <img src="img/4/station_img_1.jpg" alt="" usemap="#logos4" />
+
+            <map name="logos4">
+            <area href="javascript:void(0);" shape="circle" coords="119,107,33" id="click4" title="Tekniska Högskolan" alt="Tekniska Högskolan" />
+            <area href="javascript:void(0);" shape="circle" coords="199,107,33" id="click3"  class="SC_Prev"  title="Stadion" alt="Stadion" />
+            <area shape="default" nohref="nohref" title="Default" alt="Default"/>
+            </map>
+
+<a id="clickclose" class="" onclick="closewindow();"><img id="closeid" src="img/close.png"/></a> 
+        </div>
+               
+        </div>
+    </div>
+</div>   
+</b><b class="b5">    
+ <!-- HÖGDALEN -->
+<div id="click5" class="SC_Bullet bullet_5" data-showcase='{ 
+                    "coords" : "41%,80",
+                    "flicker_time":"1000,500",
+                    "flicker_size":2.0,
+                    "flicker_opacity":"0.5,1",
+                    "flicker_color":"#007e01,#007e01",
+                    "flicker_image":"img/icon_gron.png",
+                    "border_radius":"500,700",
+                    "border_size":"0,0",
+                    "tooltip_offset":"-37,38",
+                    "tooltip_close" : "hover",
+                    "panel_coords" : "10,50" }'>
+
+                                    <div class="zoomin">
+
+                  <span><a id="page5" class="active"><img src="img/blue_icon.png" /></a></span>
+    </div>
+
+        </div>
+        <div class="SC_Tooltip">    
+            <p></p>
+        </div>
+        <div class="SC_Panel panel">
+             <div class="popup_content">
+
+        
+    <div id="footer5" align="center">   
+
+   <!-- <img class="imagesrc" src="img/5/station_img.jpg" /> -->
+
+    <div id="docsbuttons">
+    <a class="nav" onClick="prev();"><img src="img/prev.png"/></a>
+
+            <span onclick="goto0();"><img src="img/5/01.jpg"/></span> &nbsp; 
+
+            <span onclick="goto1();"><img src="img/5/02.jpg"/></span> &nbsp; 
+
+            <span onclick="goto2();"><img src="img/5/03.jpg"/></span> &nbsp; 
+
+            <span onclick="goto3();"><img src="img/5/04.jpg"/></span> &nbsp; 
+
+            <a class="nav" onClick="next();"><img src="img/next.png"/></a>
+
+    </div><br />
+
+        <div id="footer_btn">
+           <!-- <img src="img/5_station.png" alt="" usemap="#logos5" />-->
+           <img src="img/5/station_img_1.jpg" alt="" usemap="#logos5" />
+
+            <map name="logos5">
+            <area href="javascript:void(0);" shape="circle" coords="199,107,33" id="click5" title="Högdalen" alt="Högdalen" />
+            <area shape="default" nohref="nohref" title="Default" alt="Default"/>
+            </map>
+<a id="clickclose" class="" onclick="closewindow();"><img id="closeid" src="img/close.png"/></a> 
+        </div>
+               
+        </div>
+    </div>
+</div> 
+
+</b>
+
+			</div>
+		</div>
+		
+
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-showcase-2.2.min.js"></script>
+
+<script src="js/hammer.min.js"></script>
+<script src="js/hammer.jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function closewindow() {
+    document.getElementById('container').getElementsByClassName('metromp')[0].click();
+      $('audio').each(function() {
+     if(!this.paused){
+        this.pause();
+     }
+    });
+}
+
+function btn2() {
+    document.getElementById('container').getElementById('click2')[0].dblclick();
+}
+
+
+location.hash = "";
+
+    function closep() {
+        window.location.reload();
+    }
+
+    function prev(){
+        document.getElementById('targetFrame').contentWindow.$('ul').previous();
+    }
+    function next(){
+        document.getElementById('targetFrame').contentWindow.$('ul').next();
+    }
+    function goto0(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(0);
+    }
+    function goto1(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(1);
+    }
+    function goto2(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(2);
+    }
+    function goto3(){
+        document.getElementById('targetFrame').contentWindow.$('ul').gotoSlide(3);
+    
+    }
+
+
+  function changeImage() {
+
+        if (document.getElementById("imgClickAndChange").src == "img/4/02.jpg") 
+        {
+            document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/maximize.png";
+        }
+        else 
+        {
+            document.getElementById("imgClickAndChange").src = "img/minimize.png";
+        }
+    }
+
+$(function(){  
+    
+    /*  var red = document.querySelectorAll("#footer, #footer1, #footer2, #footer3");*/
+        var foot = document.getElementById("footer");
+        var foot1 = document.getElementById("footer1");
+        var foot2 = document.getElementById("footer2");
+        var foot3 = document.getElementById("footer3");
+        var foot4 = document.getElementById("footer4");
+        var foot5 = document.getElementById("footer5");
+
+//Swipe
+    Hammer(foot).on("swipeleft", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').next();
+    });
+
+      Hammer(foot1).on("swipeleft", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').next();
+    });
+
+    Hammer(foot).on("swiperight", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').previous();
+    });
+    
+      Hammer(foot1).on("swiperight", function() {
+       document.getElementById('targetFrame').contentWindow.$('ul').previous();
+    });
+});
+
+
+$(function(){
+    $('#targetFrame').load(function(){
+        $(this).show();
+        console.log('load the iframe')
+    });
+
+});
+ 
+  $("#kung,#tekniska,#tc,#stadion").on("play", function (me) {
+         jQuery('audio').each(function (i,e) {
+              if (e != me.currentTarget)
+              { 
+                  this.pause(); 
+              }
+         });
+ });
+
+
+ $( "div#click1" ).click(function() {
+        
+        $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '1p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+        $("#targetFrame",window.document).height(250);
+         $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('kung').play();
+  } else {
+       document.getElementById('kung').pause();
+
+}
+
+});
+ $( "area#click1" ).click(function() {
+        
+         $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '1p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('kung').play();
+  } else {
+       document.getElementById('kung').pause();
+
+}
+});
+$( "div#click2" ).click(function() {
+        
+          $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '2p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tc').play();
+  } else {
+       document.getElementById('tc').pause();
+
+}
+});
+$( "area#click2" ).click(function() {
+        
+          $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '2p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tc').play();
+  } else {
+       document.getElementById('tc').pause();
+
+}
+});
+$( "div#click3" ).click(function() {
+        
+          $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '3p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('stadion').play();
+  } else {
+       document.getElementById('stadion').pause();
+
+}
+});
+$( "area#click3" ).click(function() {
+        
+         $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '3p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('stadion').play();
+  } else {
+       document.getElementById('stadion').pause();
+
+}
+});
+$( "div#click4" ).click(function() {
+        
+         $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '4p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tekniska').play();
+  } else {
+       document.getElementById('tekniska').pause();
+
+}
+});
+$( "area#click4" ).click(function() {
+        
+          $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '4p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+
+         if ($(".popup_content").is(":visible")){
+      document.getElementById('tekniska').play();
+  } else {
+       document.getElementById('tekniska').pause();
+
+}
+});
+$( "div#click5" ).click(function() {
+        
+        $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '5p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+        $("#targetFrame",window.document).height(250);
+        $( "#container" ).removeClass( "map_maximize");
+        $('#container').addClass('map_minimize');
+});
+$( "area#click5" ).click(function() {
+        
+          $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', '5p.html'); 
+              $('#targetFrame').fadeIn(500);
+      });
+});
+
+$( ".metromp" ).click(function() {
+        
+          $('#targetFrame').fadeOut(500,function(){
+              $('#targetFrame').attr('src', ''); 
+              $('#targetFrame').fadeIn(500);
+      });
+
+
+});
+
+$('.metromp').click(function(){
+     $('audio').each(function() {
+     if(!this.paused){
+        this.pause();
+     }
+    });
+});
+
+
+(function($){  //This functions first parameter is named $
+   $(window).load(function(){
+        $('#container').ShowCase();
+   })
+})(jQuery);  
+
+
+$( ".metromp" ).click(function() {
+
+$('#container').addClass('map_maximize');
+
+$("#targetFrame",window.document).height(0);
+
+
+});
+
+
+/* 
+$('#page1').click(function(e) {
+     // do something fancy
+    javascript:void(0);
+     e.preventDefault(); // same thing as above
+});
+*/
+
+ $("#grid").hide();
+
+ $('#imgClick').click(function() {
+  var clicks = $(this).data('clicks');
+  if (clicks) {
+
+  /*   $('#footer_btn').animate({
+    opacity: 0,
+    height: '0'
+  }, 1000, function() {
+    // Animation complete.
+    
+
+  });*/
+
+ $( "#footer_btn" ).slideDown();
+
+      $( "#grid" ).slideDown();
+
+
+  } else {
+ $( "#grid" ).slideUp();
+
+        
+  }
+  $(this).data("clicks", !clicks);
+});
+
+
+
+</script>
+<script src="js/classie.js"></script>
+        <script src="js/uiMorphingButton_inflow.js"></script>
+        <script>
+            (function() {
+                new UIMorphingButton( document.querySelector( '.morph-button' ) );
+
+                // for demo purposes only
+                [].slice.call( document.querySelectorAll( 'form button' ) ).forEach( function( bttn ) { 
+                    bttn.addEventListener( 'click', function( ev ) { ev.preventDefault(); } );
+                } );
+            })();
+        </script>
+        <script src='js/packery.pkgd.js'></script>
+        <script src="js/draggabilly.pkgd.min.js"></script>
+        <script src="js/dragdrop.js"></script>
+        <script>
+            (function() {
+                var body = document.body,
+                    dropArea = document.getElementById( 'drop-area' ),
+                    droppableArr = [], dropAreaTimeout;
+
+var slidesElem = document.querySelector('#grid');
+  var slideSize = getSize( document.querySelector('.grid__item') );
+  var pckry = new Packery( slidesElem, {
+    rowHeight: slideSize.outerHeight
+  });
+
+  // get item elements
+  var itemElems = pckry.getItemElements();
+  // for each item...
+  for ( var i=0, len = itemElems.length; i < len; i++ ) {
+    var elem = itemElems[i];
+    // make element draggable with Draggabilly
+    var draggie = new Draggabilly( elem, {
+      axis: 'xy'
+    });
+    // bind Draggabilly events to Packery
+    pckry.bindDraggabillyEvents( draggie );
+  }
+
+  // re-sort DOM after item is positioned
+  pckry.on( 'dragItemPositioned', function( _pckry, draggedItem ) {
+    var index = pckry.items.indexOf( draggedItem );
+    var nextItem = pckry.items[ index + 1 ];
+    if ( nextItem ) {
+      slidesElem.insertBefore( draggedItem.element, nextItem.element );
+    } else {
+      slidesElem.appendChild( draggedItem.element );
+    }
+
+  });
+
+
+   
+            })();
+        </script>
+</body>
+</html>
+

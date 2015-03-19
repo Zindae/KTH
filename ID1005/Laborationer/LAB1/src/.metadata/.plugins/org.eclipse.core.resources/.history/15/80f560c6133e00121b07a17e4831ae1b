@@ -1,0 +1,46 @@
+
+import java.util.*;
+import java.io.*;
+
+public class LAB3_Läs_Fil_KLASS2 
+{
+	private Scanner x;
+	
+	public void openFile()
+	{
+		try
+		{
+			System.out.println("Skriv namnet på filen du vill öppna");
+			String svar = in.nextLine();
+			
+			x = new Scanner(new File(svar)); 
+			//Scannern läser nu data från textfilen istället för tangentbordet
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("ERROR - Kunde inte hitta filen");
+		}
+		
+	}
+	
+	public void readFile()
+	{
+		while(x.hasNext())
+		//hasNext är en inbyggd funktion som loopar och läser hela filen
+		{
+			String a = x.next();
+			//detta är värdet på första raden i filen
+			
+			System.out.println(a);
+						
+		}
+	}
+	
+	public void closeFile()
+	{
+		x.close();
+	}
+		
+	
+}

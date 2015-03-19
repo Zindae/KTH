@@ -1,0 +1,26 @@
+
+public class Up13 
+{
+	public static void main (String[] args)
+	{
+	    int    k = 10;
+	    
+	StringBuilder s = new StringBuilder ("aaaa");
+	
+	change (k, s); 
+	
+	System.out.println (k);
+	System.out.println (s);
+	}
+	
+	public static void change (int k, StringBuilder sb)
+	{
+	    k++;
+	//sb = new StringBuilder ("bbbb");
+	sb.append ("xxxx");
+		
+	//append förlänger strängen med x. 	
+	//Om bortkommentera delen används kommer denna nya sträng bbbb appendas med xxx, men denna printas ej
+	}
+
+}

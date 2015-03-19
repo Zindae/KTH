@@ -1,0 +1,41 @@
+<!ELEMENT root (menu*, recipes_cookbook*)>
+
+ <!ENTITY brkbar   "&#166;" >
+    <!ENTITY ccedil   "&#231;" >
+    <!ENTITY Ouml     "&#214;" >
+    <!ENTITY ouml     "&#246;">
+
+    <!-- noll eller en gång. (?) -->
+    <!-- noll till många gånger.(*) -->
+    <!-- 1 till många gånger (+) -->
+
+    <!ENTITY % p "(#PCDATA)"> 
+
+<!ELEMENT menu (menu_item+)>
+<!ELEMENT menu_item (menu_id, name, url)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT menu_id (#PCDATA)>
+	<!ELEMENT url (#PCDATA)>
+
+<!ELEMENT recipes_cookbook (recipes+)><!--  recipes kan förekomma ett till många gånger -->
+	<!ELEMENT recipes (recipe_id, img, title, alt, ingredients, directions, similar, date, reviews)>
+		<!ELEMENT recipe_id (#PCDATA)>
+		<!ELEMENT img (#PCDATA)>
+		<!ELEMENT title (#PCDATA)>
+		<!ELEMENT alt (#PCDATA)>
+		<!ELEMENT ingredients (#PCDATA)>
+		<!ELEMENT directions (#PCDATA)>
+		<!ELEMENT similar (#PCDATA)>
+		<!ELEMENT date (#PCDATA)>
+
+	<!ELEMENT reviews (comment*)>
+			<!ELEMENT comment (comment_id, comment_date, comments, name, email)>
+				<!ELEMENT comment_id (#PCDATA)>
+				<!ELEMENT comment_date (#PCDATA)>
+				<!ELEMENT comments (#PCDATA)>
+				<!ELEMENT email (#PCDATA)>
+
+
+
+
+

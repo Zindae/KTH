@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+       <xs:element name="root">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="menu">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="menu_item" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="menu_id" type="xs:int"></xs:element>
+                            <xs:element name="name" type="xs:string"></xs:element>
+                              <xs:element name="url" type="xs:string"></xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="recipes_cookbook">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="recipes">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="recipe_id" type="xs:int"></xs:element>
+                                <xs:element name="img" type="xs:string"></xs:element>
+                                <xs:element name="title" type="xs:string"></xs:element>
+                                <xs:element name="alt" type="xs:string"></xs:element>
+                                <xs:element name="ingredients" type="xs:string"></xs:element>
+                                <xs:element name="directions" type="xs:string"></xs:element>
+                                <xs:element name="similar" type="xs:int"></xs:element>
+                                <xs:element name="date" type="xs:date"></xs:element>
+                                <xs:element name="reviews">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="comment" maxOccurs="unbounded">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                         <xs:element name="comment_id" type="xs:int"></xs:element>
+                                         <xs:element name="comment_date" type="xs:date"></xs:element>
+                                          <xs:element name="comments" type="xs:string"></xs:element>
+                                           <xs:element name="name" type="xs:string"></xs:element>
+                                            <xs:element name="email" type="xs:string"></xs:element>
+                                          </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                           </xs:element>
+                         </xs:sequence>
+                        </xs:complexType>
+                       </xs:element>
+                     </xs:sequence>
+                   </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+          </xs:element>
+   </xs:schema>

@@ -1,0 +1,17 @@
+
+public class Konstruktor2
+{
+	String fname;
+	
+	public Konstruktor2(String name) //en konstruktor
+	{
+		name = name;
+		greet();
+	}
+	
+	private void greet()
+	{
+		System.out.println("Välkommen " + name);
+	}
+
+}

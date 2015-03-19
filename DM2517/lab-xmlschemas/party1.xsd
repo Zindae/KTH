@@ -1,0 +1,14 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:party="http://xml.csc.kth.se/~state/DM2517/lab-xmlschemas/"
+  elementFormDefault="qualified"
+  targetNamespace="http://xml.csc.kth.se/~state/DM2517/lab-xmlschemas/">
+
+  <element name="party" type="party:PartyType"/>
+  <element name="title" type="string"/>
+
+  <complexType name="PartyType">
+    <sequence>
+      <element ref="party:title"/>
+    </sequence>
+  </complexType>
+</schema>

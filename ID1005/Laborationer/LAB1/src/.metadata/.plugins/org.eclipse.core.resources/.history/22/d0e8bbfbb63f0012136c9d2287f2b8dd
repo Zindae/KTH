@@ -1,0 +1,17 @@
+//subklass
+//unika metoder hos varje subklass
+//enda som kan utföra denna metod är denna klass
+
+public class grillMaster extends staff //extends tar all info från staff
+{
+
+	public void burn()
+	{
+		System.out.println(name + " bränner köttet, klantskalle -.-");
+	}
+	
+	public void checkIn()
+	{
+		System.out.println(name + "säger: Yo");
+	}
+}

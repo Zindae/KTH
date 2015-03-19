@@ -1,0 +1,8 @@
+import javax.swing.JFrame;
+
+public class EnArmadBandit extends JFrame implements SlotControl  {
+
+
+	
+
+}

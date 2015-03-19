@@ -1,0 +1,25 @@
+//klass 2 i LAB4_Datum
+
+public class LAB4_Datum_KLASS2
+{
+	private int månad;
+	private int dag;
+	private int år;
+	
+	public LAB4_Datum_KLASS2(int m, int d, int y) //konstruktor
+	{
+		månad = m;
+		dag = d;
+		år = y;
+		
+		System.out.printf("Datumen är: %s \n", this);
+		//'this' använder objektet i metoden toString 
+	}
+	
+	public String toString() //inbyggd i java, används till 'this'
+	{
+		return String.format("%d/%d/%d", år, månad, dag);
+		//dessa värden retuneras 
+	}
+
+}

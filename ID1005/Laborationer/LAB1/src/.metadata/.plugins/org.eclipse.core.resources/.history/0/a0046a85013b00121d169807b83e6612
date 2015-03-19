@@ -1,0 +1,22 @@
+
+public class Arv 
+{
+	private int timme;
+	private int minut;
+	private int sekund;
+	
+	public void setTid(int h, int m, int s) //dessa int används
+	{
+		timme = ((h >= 0 && h < 24)) ? h : 0); //om h mellan 0-24 sätter 0 till h
+		minut = ((m >= 0 && m < 60)) ? m : 0); //detta 
+		sekund = ((s >= 0 && s < 60)) ? s : 0);
+	}
+	
+	public String vanligTid()
+	{
+		return String.format("%02d:%02d:%02d", timme, minut, sekund);
+		//visar andra nummret efter två decimaler och adderar kolum
+	}
+
+}
+
